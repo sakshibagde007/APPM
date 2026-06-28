@@ -43,6 +43,11 @@
           <span class="filter-label">Upcoming</span>
           <span class="filter-count" id="count-upcoming">0</span>
         </button>
+        <button type="button" class="filter-btn" data-filter="calendar">
+          <span class="filter-icon">🗓️</span>
+          <span class="filter-label">Calendar</span>
+          <span class="filter-count" id="count-calendar">0</span>
+        </button>
         <button type="button" class="filter-btn" data-filter="completed">
           <span class="filter-icon">✅</span>
           <span class="filter-label">Completed</span>
@@ -83,6 +88,7 @@
         <button type="submit" class="btn btn-primary">Add Task</button>
       </form>
 
+      <div id="list-view">
       <div class="search-bar">
         <input
           type="search"
@@ -99,6 +105,38 @@
         <div class="empty-icon">🎯</div>
         <h3 id="empty-title">No tasks for today</h3>
         <p id="empty-message">Add a task above to get started. Focus on what matters most today.</p>
+      </div>
+      </div>
+
+      <div class="calendar-view hidden" id="calendar-view">
+        <div class="calendar-card">
+          <div class="calendar-header">
+            <button type="button" class="icon-btn calendar-nav" id="cal-prev" aria-label="Previous month">‹</button>
+            <div class="calendar-title-wrap">
+              <h2 class="calendar-title" id="calendar-title"></h2>
+              <button type="button" class="btn btn-ghost btn-sm" id="cal-today">Today</button>
+            </div>
+            <button type="button" class="icon-btn calendar-nav" id="cal-next" aria-label="Next month">›</button>
+          </div>
+          <div class="calendar-weekdays" aria-hidden="true">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+            <span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div class="calendar-grid" id="calendar-grid" role="grid" aria-label="Task calendar"></div>
+        </div>
+
+        <div class="calendar-day-panel">
+          <div class="calendar-day-header">
+            <h3 id="selected-date-label"></h3>
+            <button type="button" class="btn btn-primary btn-sm" id="cal-add-task">+ Add task</button>
+          </div>
+          <ul class="task-list" id="calendar-task-list" aria-live="polite"></ul>
+          <div class="empty-state hidden" id="calendar-empty">
+            <div class="empty-icon">📅</div>
+            <h3>No tasks on this day</h3>
+            <p>Click "Add task" to schedule something for this date.</p>
+          </div>
+        </div>
       </div>
     </main>
   </div>
