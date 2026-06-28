@@ -2,6 +2,8 @@
 
 A lightweight, browser-based task manager for organizing your daily work. No install required — open and go.
 
+**Repository:** [github.com/sakshibagde007/APPM](https://github.com/sakshibagde007/APPM)
+
 ## Features
 
 - **Today view** — see tasks due today, overdue items, and tasks without a due date
